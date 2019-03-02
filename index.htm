@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="/css/fontawesome-all.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet"> 
+    <title>Michael Niers</title>
+  </head>
+  <body>
+
+    <!-------------HEADER---------------->
+
+    <header>
+
+      <div id="secpage">
+        <ul>
+        <a href='Lucas.htm'><li>Lucas</li></a>
+        </ul>
+      </div>
+
+      <nav id="main-nav">
+
+        <div class="dropdown">
+          <button><i class="fas fa-bars"></i></button>
+        <ul>
+          <a href="#home"><li>Home</li></a>
+          <a href="#about"><li>About</li></a>
+          <a href="#projects"><li>Projects</li></a>
+          <a href="#contact"><li>Contact</li></a>
+        </ul>
+      </nav>
+    </header>
+
+    <!-------------HOME---------------->
+
+    <section id="home">
+      <hr>
+      <a href="#about">
+        <br>
+        <br>
+        <br>
+        <img src="img/pfeil.png" alt="Pfeil">
+      </a>
+    </section>
+
+    <!-------------ABOUT---------------->
+
+    <section id="about">
+      <h3 style="margin: 0;">Über</h3>
+        <hr>
+        <img src="img/portraet.png" alt="Profil">
+        <h3>Meine Arbeit</h3>
+        <p>Ich war nie der Beste in der Schule, ich bin einfach ein sehr neugieriger Mensch. Meine Seite existiert, um diese Themen und Ideen zu teilen, die mich interessieren. Ich verbringe viel Zeit damit, Software und Elektronik zu bauen, die ich hier vorstellen möchte.</p>
+
+
+
+<div id="mittig">
+  <ul><h3>Software Entwicklung</h3>
+    <li>- Microservices, Full stack web apps</li>
+  </ul> 
+  <ul><h3>Elektronik</h3>
+    <li>- LED Music visualizer</li>
+  </ul>
+</div>
+<br>
+    </section>
+
+    <!-------------PROJECTS---------------->
+
+    <section id="work"><div id="projects">
+
+        <div class="white">
+        <br>
+      <h3 style="margin: 0;">Projekte</h3>
+    </div>
+      <hr>
+
+        <ul>
+          <li><a href="https://github.com/Sharazan/Personal-Website"><img src="img/Project_Website.jpg" alt="Personal Wesite"></a></li>
+          <li><a href="#"><img src="http://placehold.it/1280x720" alt="Projekt_02"></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-------------CONTACT---------------->
+
+    <section id="contact">
+      <h3 style="margin: 0;">Kontakt</h3>
+      <hr>
+
+      <form action="Kontakt.php" method="POST">
+        <input type="email" tabindex="1" name="email" required="required" placeholder="E-Mail"><br>
+        <input type="text" tabindex="2" name="betreff" placeholder="Betreff"><br>
+        <textarea tabindex="3" name="nachricht" required="required" placeholder="Nachricht"></textarea><br>
+        <input class="button" name="senden" type="submit">
+      </form>
+    </section>
+
+    <!-------------FOOTER---------------->
+
+    <footer>
+    
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('button').click(function(){
+                $('ul').toggleClass('active')
+            })
+        })
+    </script>
+
+  </body>
+</html>
