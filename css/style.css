@@ -47,10 +47,10 @@ hr {
     margin: 0 auto 40px auto;
 }
 
-#secpage, li, img, .button, button {
+li, img, .button, button, .fa-align-justify {
     transition: all 300ms; -webkit-transition: all 300ms; -moz-transition: all 300ms; -o-transition: all 300ms; 
 }
-.fa-bars {
+.fa-align-justify {
     display: none;
 }
 
@@ -69,16 +69,6 @@ header {
     background: #fff;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     z-index: 1;
-}
-
-#secpage {
-    float: left;
-    margin: 10px 0 0 50px;
-}
-
-#secpage:hover {
-    opacity: 0.5;
-    padding-top: 3px;
 }
 
 header nav {
@@ -102,20 +92,26 @@ header nav ul li:hover {
 /* HOME ******/
 
 #home {
-    background-image: url(../img/landing.jpg);
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
 }
 
-#home h1 {
-    margin: 240px auto 0 auto;
-    font-size: 75px;
+#home #videoBG {
+    position:absolute;
+    line-height: 0;
+    z-index: -1;
+    width: 100vw;
+    overflow-x: hidden;
+    align-items:center;
+    display: flex;
+    margin:auto;
 }
 
-#home h2 {
-    margin: 0 auto 0 auto;
-    font-size: 25px;
+#home h1 {
+    margin: 470px auto 0 auto;
+    font-size: 75px;
+    color: #000;
 }
 
 #home img {
@@ -130,8 +126,26 @@ header nav ul li:hover {
 
 /* ABOUT ******/
 
-#about img {
-    width: 240px;
+#about .info img {
+    width: 35%;
+    animation: drop 1.5s ease;
+}
+
+#about h1 {
+    text-align: center;
+    padding-top: 5%;
+}
+
+#about .skills h3 {
+    text-align: center;
+    padding-top: 5%;
+    float: right;
+}
+
+.info {
+    width: 50%;
+    float: left;
+    margin-left: 2%;
 }
 
 #about img:hover {
@@ -139,6 +153,13 @@ header nav ul li:hover {
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
     -o-transform: scale(1.1);
+}
+
+#about figcaption {
+    float: left;
+    margin-top: 30%;
+    text-align: justify;
+    margin-left: 6%;
 }
 
 #about h4 {
@@ -149,50 +170,25 @@ header nav ul li:hover {
     width: 700px;
 }
 
-#about p {
-    width: 700px;
+#about .info p {
+    width: 60%;
     text-align:justify;
     margin-left: auto;
     margin-right: auto;
 }
 
-#mittig {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center; 
-    text-align: justify;
-    align-items: baseline;
-    widows: 700px;
-    flex-direction: row;
-}
 
-.white h3 {
-    color: #FFFFFF;
-}
-
-ul #navi {
-    margin-top: 0px;
-    width: 765px;
-    height: 50px;
-    background-image: url("navi.png");
-    background-repeat: no-repeat;
-    list-style: none;
-    text-align: center;
-    color: #FFFFFF;
-  }
-
-  .navlist {
-    float: left;
-    width: 120px;
-    height: 50px;
-    align: center;
-  }
-
-/* PROJECTS ******/
+/* WORK ******/
 
 #work {
     background-color: #3f3f3f;
 }
+
+#work .white h1 {
+    color: #fff;
+}
+
+/* PROJECTS ******/
 
 #projects {
     width: 900px;
@@ -206,13 +202,14 @@ ul #navi {
 #projects ul li {
     width: 50%;
     float: left;
-    margin-bottom: 15px;
+    margin-bottom: 5%;
 }
 
 #projects img {
-    width: 280px;
-    height: 170px;
+    width: 320px;
+    height: auto;
     border-radius: 5px;
+    animation: drop 1.5s ease;
 }
 
 #projects img:hover {
@@ -287,14 +284,22 @@ footer p {
     padding-top: 30px;
 }
 
+@keyframes drop {
+    0% {
+        opacity: 0;
+        transform: translateY(-80px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px)
+    }
+}
+
 /* MEDIA QUERIES *****/
 
-
-/* TABLETS */
-
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1600px) {
     header {
-        height: auto;
+        height: 7%;
     }
 
     header nav {
@@ -305,29 +310,47 @@ footer p {
         font-size: 12px;
     }
 
+    #home #videoBG {
+        position:absolute;
+        line-height: 0;
+        z-index: -1;
+        min-width: 100vw;
+        min-height: 100vh;
+        overflow-x: hidden;
+        align-items:center;
+        display: flex;
+        margin:auto;
+    }
+    
     #home h1 {
-        font-size: 90px;
-        margin-top: 200px;
+        font-size: 120px;
+        margin-top: 280px;
     }
 
-    #home h2 {
-        font-size: 22px;
+    #about {
+        height: 110vh;
     }
 
-    #home img {
-        width: 32px;
-        margin-top: 350px;
-        opacity: 0.7;
+    #about h1 {
+        text-align: center;
+        padding-top: 0;
     }
 
-    #about p {
-        width: 80%;
+    #about .info p {
+        width: 85%;
         text-align: justify;
     }
 
-    #about img {
-        width: auto;
+    #about .info img {
+        width: 60%;
         height: auto;
+    }
+
+    #about figcaption {
+        float: left;
+        margin-top: 35%;
+        text-align: justify;
+        margin-left: 7%;
     }
 
     #projects {
@@ -344,7 +367,7 @@ footer p {
     }
 
     #projects img {
-        width: 35%;
+        width: 30%;
         height: auto;
     }
 
@@ -352,52 +375,297 @@ footer p {
         width: 60%;
     }
 
-    input[required] {
-        border-color: red;
-      }
+    .button {
+        width: 62%;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    header {
+        height: 7%;
+    }
+
+    header nav {
+        margin-top: 0;
+    }
+
+    header nav ul li {
+        font-size: 12px;
+    }
+
+    #home #videoBG {
+        position:absolute;
+        line-height: 0;
+        z-index: -1;
+        min-width: 100vw;
+        min-height: 100vh;
+        overflow-x: hidden;
+        align-items:center;
+        display: flex;
+        margin:auto;
+    }
+    
+    #home h1 {
+        font-size: 90px;
+        margin-top: 310px;
+    }
+
+    #about {
+        height: 110vh;
+    }
+
+    #about h1 {
+        text-align: center;
+        padding-top: 0;
+    }
+
+    #about .info p {
+        width: 85%;
+        text-align: justify;
+    }
+
+    #about .info img {
+        width: 60%;
+        height: auto;
+    }
+
+    #about figcaption {
+        float: left;
+        margin-top: 50%;
+        text-align: justify;
+        margin-left: 7%;
+    }
+
+    #projects {
+        width: auto;
+    }
+
+    #projects ul li {
+        width: 100%;
+        float: none;
+    }
+
+    #projects ul li:last-child {
+        padding-bottom: 20%;
+    }
+
+    #projects img {
+        width: 30%;
+        height: auto;
+    }
+
+    form input, form textarea {
+        width: 60%;
+    }
 
     .button {
         width: 62%;
     }
 }
 
-/* MOBILE ******/
+@media screen and (max-width: 1200px) {
+    header {
+        height: 7%;
+    }
 
-@media screen and (max-width: 480px) {
+    header nav {
+        margin-top: 0;
+    }
+
+    header nav ul li {
+        font-size: 12px;
+    }
+
+    #home #videoBG {
+        position:absolute;
+        line-height: 0;
+        z-index: -1;
+        min-width: 100vw;
+        min-height: 100vh;
+        overflow-x: hidden;
+        align-items:center;
+        display: flex;
+        margin:auto;
+    }
     
+    #home h1 {
+        font-size: 90px;
+        margin-top: 370px;
+    }
+
+    #about {
+        height: 120vh;
+    }
+
+    #about h1 {
+        text-align: center;
+        padding-top: 0;
+    }
+
+    #about .info p {
+        width: 85%;
+        text-align: justify;
+    }
+
+    #about .info img {
+        width: 60%;
+        height: auto;
+    }
+
+    #about figcaption {
+        float: left;
+        margin-top: 60%;
+        text-align: justify;
+        margin-left: 9%;
+    }
+
+    #projects {
+        width: auto;
+    }
+
+    #projects ul li {
+        width: 100%;
+        float: none;
+    }
+
+    #projects ul li:last-child {
+        padding-bottom: 20%;
+    }
+
+    #projects img {
+        width: 30%;
+        height: auto;
+    }
+
+    form input, form textarea {
+        width: 60%;
+    }
+
+    .button {
+        width: 62%;
+    }
+}
+
+/* TABLETS */
+
+@media screen and (max-width: 1024px) {
+    header {
+        height: 7%;
+    }
+
+    header nav {
+        margin-top: 0;
+    }
+
+    header nav ul li {
+        font-size: 12px;
+    }
+
+    #home #videoBG {
+        position:absolute;
+        line-height: 0;
+        z-index: -1;
+        min-width: 100vw;
+        min-height: 100vh;
+        overflow-x: hidden;
+        align-items:center;
+        display: flex;
+        margin:auto;
+    }
+    
+    #home h1 {
+        font-size: 90px;
+        margin-top: 275px;
+    }
+
+    #about {
+        height: 110vh;
+    }
+
+    #about h1 {
+        text-align: center;
+        padding-top: 0;
+    }
+
+    #about .info p {
+        width: 85%;
+        text-align: justify;
+    }
+
+    #about .info img {
+        width: 60%;
+        height: auto;
+    }
+
+    #about figcaption {
+        float: left;
+        margin-top: 60%;
+        text-align: justify;
+        margin-left: 13%;
+    }
+
+    #projects {
+        width: auto;
+    }
+
+    #projects ul li {
+        width: 100%;
+        float: none;
+    }
+
+    #projects ul li:last-child {
+        padding-bottom: 20%;
+    }
+
+    #projects img {
+        width: 40%;
+        height: auto;
+    }
+
+    form input, form textarea {
+        width: 60%;
+    }
+
+    .button {
+        width: 62%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
     header nav {
         margin: 0;
         float: none;
     }
 
-    header nav img {
-        width: 10px;
-        height: 20px;
-    }
-
-    .fa-bars {
+    .fa-align-justify {
         display: inline-block;
+        font-size: 15px;
+        width: 100%;
+        cursor: pointer;
+        text-align: right;
+        margin: 35px 65px 0 0;
+        z-index: -1;
     }
 
-    .dropdown {
-        position: relative;
-        transform: translate(0%, 40%);
+    .fa-align-justify:hover {
+        opacity: 0.5;
     }
 
     button {
-        width: 90px;
-        float: right;
-        height: 20px;
         font-size: 16px;
         border: none;
         display: inline;
         box-shadow: none;
         cursor: pointer;
-        margin: 15px 50px 0 0;
+        margin: 24px 90px 0 0;
     }    
 
     header nav ul {
-        position: absolute;
+        height: 0;
+        overflow: hidden;
+
+        position: relative;
         margin: 0;
         padding: 0;
         width: 100%;
@@ -407,14 +675,20 @@ footer p {
         transition: 0.5s;
     }
 
-    header nav ul.active {
+    header nav ul.open {
         transform: perspective(1000px) rotateX(0deg);
-        display: block;
+        height: auto;
     }
 
     header nav ul li {
+        width: 100%;
+        padding: 5px 0;
         list-style: none;
-        display: block;
+        /*display: block;*/
+        margin: 0;
+        font-size: 11px;
+        border-top: 1px solid #dddddd;
+        background-color: #dddddd
     }
 
     header nav ul li:hover {
@@ -436,28 +710,566 @@ footer p {
     }
 
 #home h1 {
-    font-size: 60px;
-    margin-top: 200px;
+    font-size: 70px;
+    margin-top: 55%;
 }
 
-#home h2 {
+#home #videoBG {
+
+    position:absolute;
+    line-height: 0;
+    z-index: -10;
+    width: 100vw;
+    overflow-x: hidden;
+    align-items:center;
+    display: flex;
+    margin:auto;
+}
+
+#about { height: 125vh; }
+
+#about h1 {
+    text-align: center;
+    padding-top: 0;
+}
+
+#about .info img {
+    width: 40%;
+    animation: drop 1.5s ease;
+}
+
+.info {
+    width: 100%;
+    margin-left: 2%;
+}
+
+#work {
+    z-index: -1;
+}
+
+#projects img {
+    width: 60%;
+    height: auto;
+}
+
+form input, form textarea {
+    width: 70%;
+}
+}
+
+/* MOBILE ******/
+
+@media screen and (max-width: 600px) {
+    header nav {
+        margin: 0;
+        float: none;
+    }
+
+    .fa-align-justify {
+        display: inline-block;
+        font-size: 15px;
+        width: 100%;
+        cursor: pointer;
+        text-align: right;
+        margin: 15px 35px 0 0;
+        z-index: -1;
+    }
+
+    .fa-align-justify:hover {
+        opacity: 0.5;
+    }
+
+    button {
+        font-size: 16px;
+        border: none;
+        display: inline;
+        box-shadow: none;
+        cursor: pointer;
+        margin: 24px 90px 0 0;
+    }    
+
+    header nav ul {
+        height: 0;
+        overflow: hidden;
+
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background: none;
+        transform-origin: top;
+        transform: perspective(1000px) rotateX(-90deg);
+        transition: 0.5s;
+    }
+
+    header nav ul.open {
+        transform: perspective(1000px) rotateX(0deg);
+        height: auto;
+    }
+
+    header nav ul li {
+        width: 100%;
+        padding: 5px 0;
+        list-style: none;
+        /*display: block;*/
+        margin: 0;
+        font-size: 11px;
+        border-top: 1px solid #dddddd;
+        background-color: #dddddd
+    }
+
+    header nav ul li:hover {
+        background-color: #eeeeee;
+    }
+
+    header nav ul li a {
+        display: block;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        background: #262626;
+        color: #fff;
+        border-bottom: 1px solid rgba(0,0,0,.2);
+    }
+    
+    header nav ul li a:hover {
+        background: #0d7ad0;
+    }
+
+#home h1 {
+    font-size: 50px;
+    margin-top: 60%;
+}
+
+#home #videoBG {
+
+    position:absolute;
+    line-height: 0;
+    z-index: -10;
+    width: 100vw;
+    overflow-x: hidden;
+    align-items:center;
+    display: flex;
+    margin:auto;
+}
+
+#about { height: 150vh; }
+
+#about h1 {
+    text-align: center;
+    padding-top: 0%;
+}
+
+#about .info img {
+    width: 50%;
+    animation: drop 1.5s ease;
+}
+
+.info {
+    width: 100%;
+    margin-left: 2%;
+}
+
+#work {
+    z-index: -1;
+}
+
+#projects img {
+    width: 50%;
+    height: auto;
+}
+
+form input, form textarea {
+    width: 70%;
+}
+}
+
+@media screen and (max-width: 480px) {
+    
+    header nav {
+        margin: 0;
+        float: none;
+    }
+
+    .fa-align-justify {
+        display: inline-block;
+        font-size: 15px;
+        width: 100%;
+        cursor: pointer;
+        text-align: right;
+        margin: 15px 35px 0 0;
+        z-index: -1;
+    }
+
+    .fa-align-justify:hover {
+        opacity: 0.5;
+    }
+
+    button {
+        font-size: 16px;
+        border: none;
+        display: inline;
+        box-shadow: none;
+        cursor: pointer;
+        margin: 24px 90px 0 0;
+    }    
+
+    header nav ul {
+        height: 0;
+        overflow: hidden;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background: none;
+        transform-origin: top;
+        transform: perspective(1000px) rotateX(-90deg);
+        transition: 0.5s;
+    }
+
+    header nav ul.open {
+        transform: perspective(1000px) rotateX(0deg);
+        height: auto;
+    }
+
+    header nav ul li {
+        width: 100%;
+        padding: 5px 0;
+        list-style: none;
+        /*display: block;*/
+        margin: 0;
+        font-size: 11px;
+        border-top: 1px solid #dddddd;
+        background-color: #dddddd
+    }
+
+    header nav ul li:hover {
+        background-color: #eeeeee;
+    }
+
+    header nav ul li a {
+        display: block;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        background: #262626;
+        color: #fff;
+        border-bottom: 1px solid rgba(0,0,0,.2);
+    }
+    
+    header nav ul li a:hover {
+        background: #0d7ad0;
+    }
+
+#home h1 {
+    font-size: 50px;
+    margin-top: 70%;
+}
+
+#home #videoBG {
+
+    position:absolute;
+    line-height: 0;
+    z-index: -10;
+    width: 100vw;
+    overflow-x: hidden;
+    align-items:center;
+    display: flex;
+    margin:auto;
+}
+
+#about { height: 170vh; }
+
+#about h1 {
+    text-align: center;
+    padding-top: 0%;
+}
+
+#about .info img {
+    width: 65%;
+    animation: drop 1.5s ease;
+}
+
+#about figcaption {
+    float: left;
+    margin-top: 30%;
+    text-align: justify;
+    margin-left: 15%;
+}
+
+.info {
+    width: 100%;
+    margin-left: 2%;
+}
+
+#work {
+    z-index: -1;
+}
+
+#projects img {
     width: 70%;
     height: auto;
 }
 
-#home img {
-    width: 32px;
-    margin-top: 200px;
-    opacity: 0.7;
+form input, form textarea {
+    width: 70%;
+}
 }
 
-#about #mittig {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; 
-    text-align: center;
-    widows: 150px;
+@media screen and (max-width: 375px) {
+    
+    header nav {
+        margin: 0;
+        float: none;
+    }
 
+    .fa-align-justify {
+        display: inline-block;
+        font-size: 15px;
+        width: 100%;
+        cursor: pointer;
+        text-align: right;
+        margin: 15px 35px 0 0;
+        z-index: -1;
+    }
+
+    .fa-align-justify:hover {
+        opacity: 0.5;
+    }
+
+    button {
+        font-size: 16px;
+        border: none;
+        display: inline;
+        box-shadow: none;
+        cursor: pointer;
+        margin: 24px 90px 0 0;
+    }    
+
+    header nav ul {
+        height: 0;
+        overflow: hidden;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background: none;
+        transform-origin: top;
+        transform: perspective(1000px) rotateX(-90deg);
+        transition: 0.5s;
+    }
+
+    header nav ul.open {
+        transform: perspective(1000px) rotateX(0deg);
+        height: auto;
+    }
+
+    header nav ul li {
+        width: 100%;
+        padding: 5px 0;
+        list-style: none;
+        /*display: block;*/
+        margin: 0;
+        font-size: 11px;
+        border-top: 1px solid #dddddd;
+        background-color: #dddddd
+    }
+
+    header nav ul li:hover {
+        background-color: #eeeeee;
+    }
+
+    header nav ul li a {
+        display: block;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        background: #262626;
+        color: #fff;
+        border-bottom: 1px solid rgba(0,0,0,.2);
+    }
+    
+    header nav ul li a:hover {
+        background: #0d7ad0;
+    }
+
+#home h1 {
+    font-size: 50px;
+    margin-top: 70%;
+}
+
+#home #videoBG {
+
+    position:absolute;
+    line-height: 0;
+    z-index: -10;
+    width: 100vw;
+    overflow-x: hidden;
+    align-items:center;
+    display: flex;
+    margin:auto;
+}
+
+#about { height: 180vh; }
+
+#about h1 {
+    text-align: center;
+    padding-top: 0%;
+}
+
+#about .info img {
+    width: 65%;
+    animation: drop 1.5s ease;
+}
+
+#about figcaption {
+    float: left;
+    margin-top: 30%;
+    text-align: justify;
+    margin-left: 20%;
+}
+
+.info {
+    width: 100%;
+    margin-left: 2%;
+}
+
+#work {
+    z-index: -1;
+}
+
+#projects img {
+    width: 70%;
+    height: auto;
+}
+
+form input, form textarea {
+    width: 70%;
+}
+}
+
+@media screen and (max-width: 320px) {
+    
+    header nav {
+        margin: 0;
+        float: none;
+    }
+
+    .fa-align-justify {
+        display: inline-block;
+        font-size: 15px;
+        width: 100%;
+        cursor: pointer;
+        text-align: right;
+        margin: 15px 35px 0 0;
+        z-index: -1;
+        overflow: hidden;
+    }
+
+    .fa-align-justify:hover {
+        opacity: 0.5;
+    }
+
+    button {
+        font-size: 16px;
+        border: none;
+        display: inline;
+        box-shadow: none;
+        cursor: pointer;
+        margin: 24px 90px 0 0;
+    }    
+
+    header nav ul {
+        height: 0;
+        overflow: hidden;
+
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background: none;
+        transform-origin: top;
+        transform: perspective(1000px) rotateX(-90deg);
+        transition: 0.5s;
+    }
+
+    header nav ul.open {
+        transform: perspective(1000px) rotateX(0deg);
+        height: auto;
+    }
+
+    header nav ul li {
+        width: 100%;
+        padding: 5px 0;
+        list-style: none;
+        /*display: block;*/
+        margin: 0;
+        font-size: 11px;
+        border-top: 1px solid #dddddd;
+        background-color: #dddddd
+    }
+
+    header nav ul li:hover {
+        background-color: #eeeeee;
+    }
+
+    header nav ul li a {
+        display: block;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        background: #262626;
+        color: #fff;
+        border-bottom: 1px solid rgba(0,0,0,.2);
+    }
+    
+    header nav ul li a:hover {
+        background: #0d7ad0;
+    }
+
+#home h1 {
+    font-size: 35px;
+    margin-top: 70%;
+}
+
+#home #videoBG {
+
+    position:absolute;
+    line-height: 0;
+    z-index: -10;
+    width: 100vw;
+    overflow-x: hidden;
+    align-items:center;
+    display: flex;
+    margin:auto;
+}
+
+#about { height: 220vh; }
+
+#about h1 {
+    text-align: center;
+    padding-top: 0%;
+}
+
+#about .info img {
+    width: 70%;
+    animation: drop 1.5s ease;
+}
+
+.info {
+    width: 100%;
+    margin-left: 2%;
+}
+
+#about figcaption {
+    float: left;
+    margin-top: 45%;
+    text-align: justify;
+    margin-left: 13%;
+}
+
+#work {
+    z-index: -1;
 }
 
 #projects img {
