@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/neu.css">
+    <link rel="stylesheet" type="text/css" href="css/bar.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet"> 
     <title>Michael Niers</title>
   </head>
-  <body>
+  <body data-router-wrapper>
 
     <!-------------HEADER---------------->
 
@@ -31,12 +31,14 @@
 
     <!-------------HOME---------------->
 
-    <section id="home">
-        
-      <video id="videoBG" autoplay muted loop>
+
+
+    <section data-router-view="home" id="home">
+      
+<!--       <video id="videoBG" autoplay muted loop>
         <source src="bg2.mp4" type="video/mp4">
-      </video>
-      <hr>
+      </video> -->
+
       <h1>M i c h a e l<br>N i e r s</h1>         
 
     </section>
@@ -144,18 +146,53 @@
     <!-------------PROJECTS---------------->
 
     <section id="work">
-    <div class="white">
-      <br>
-      <h1 style="margin: 0;">Projekte</h1>
-      <hr>
-    </div>
-    <div id="projects">
-        <ul>
-          <li><a href="https://github.com/MichaelNiers/Personal-Website"><img src="img/Project_Website.jpg" alt="Personal Website"></a></li>
-          <li><a href="https://github.com/MichaelNiers/XML-Parser"><img src="img/xml.png" alt="XML Parser"></a></li>
+      <div class="white">
+        <br>
+        <h1 style="margin: 0;">Projekte</h1>
+        <br>
+        <br>
+        <br>
+      </div>
+    <div id="projects"> 
+      <ul>
+            <li><div class="front"><img src="img/Project_Website.jpg" alt="Personal Website">
+              </div>
+                   <div class="back">
+                    <h3>Personal Website</h3>
+                      <p>HTML + CSS + JavaScript</p>
+                      <br>
+                      <a href="https://github.com/MichaelNiers/Personal-Website"><strong>Code</strong></a>
+                      <br>
+                      <br>
+                    </div> 
+                  </li>
+            
+            <li><div class="front"><img src="img/xml.png" alt="XML Parser">
+          </div>
+           <div class="back">
+              <h3>XML Parser</h3>
+              <p>Pure C#</p>
+              <br>
+              <a href="https://github.com/MichaelNiers/XML-Parser"><strong>Code</strong></a>
+              <br>
+              <br>
+            </div>
+          </li>
+
+          <li><div class="front"><img src="img/Clicking_Game.jpg" alt="Clicking Game">
+          </div>
+           <div class="back">
+              <h3>Clicking Game</h3>
+              <p>Pure C#</p>
+              <br>
+              <a href="https://github.com/MichaelNiers/Clicking-Game"><strong>Code</strong></a>
+              <br>
+              <br>
+            </div>
+          </li>
         </ul>
       </div>
-    </section>
+      </section>
 
     <!-------------CONTACT---------------->
 
@@ -165,7 +202,7 @@
       <hr>
 
       <form action="Kontakt.php" method="POST">
-        <input type="email" tabindex="1" name="email" required="required" placeholder="E-Mail"><br>
+        <input type="email" tabindex="1" name="email" required="required" placeholder="Email"><br>
         <input type="text" tabindex="2" name="betreff" placeholder="Betreff"><br>
         <textarea tabindex="3" name="nachricht" required="required" placeholder="Nachricht"></textarea><br>
         <input class="button" name="senden" type="submit">
@@ -175,7 +212,10 @@
     <!-------------FOOTER---------------->
 
     <footer>
-    
+      <br>
+      <a href="https://github.com/MichaelNiers/"><i class="fab fa-github"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=100009937062245"><i class="fab fa-facebook-square"></i></a>
+      <a href="https://www.xing.com/"><i class="fab fa-xing"></i></a>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>

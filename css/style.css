@@ -3,6 +3,7 @@ html, body {
     padding: 0;
     height: 100%;
     text-align: center;
+    scroll-behavior: smooth;
 }
 
 section {
@@ -95,12 +96,16 @@ header nav ul li:hover {
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background-image: url(/img/bg.PNG);
 }
 
 #home #videoBG {
-    position:absolute;
+    position: absolute;
     line-height: 0;
-    z-index: -1;
+    z-index: -100;
     width: 100vw;
     overflow-x: hidden;
     align-items:center;
@@ -109,7 +114,6 @@ header nav ul li:hover {
 }
 
 #home h1 {
-    margin: 470px auto 0 auto;
     font-size: 75px;
     color: #000;
 }
@@ -125,6 +129,8 @@ header nav ul li:hover {
 }
 
 /* ABOUT ******/
+
+
 
 #about .info img {
     width: 35%;
@@ -185,24 +191,34 @@ header nav ul li:hover {
 }
 
 #work .white h1 {
-    color: #fff;
+    color: #f5f5f5;
 }
 
 /* PROJECTS ******/
 
 #projects {
-    width: 900px;
-    margin: 0 auto 0 auto;
+/*     display: flex; 
+    align-items: center;  
+    justify-content: center; */
 }
 
 #projects ul {
-    padding: 0;
-}
+    position: relative;
+    text-align: center;
+    display: block;
+    max-width: 100%;
+    margin: auto;
+    }
 
 #projects ul li {
-    width: 50%;
-    float: left;
-    margin-bottom: 5%;
+    width: 25%;
+    transition: all 0.8s ease;
+    transform-style: preserve-3d;
+    padding-left: 5%;
+    position: relative;
+    display: inline-block;
+    max-width: 30%;
+    align-self: flex-start;
 }
 
 #projects img {
@@ -210,6 +226,7 @@ header nav ul li:hover {
     height: auto;
     border-radius: 5px;
     animation: drop 1.5s ease;
+    margin: 0 0 0px 0;
 }
 
 #projects img:hover {
@@ -220,7 +237,40 @@ header nav ul li:hover {
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3)
 }
 
-/* CONTACT ******/
+  #projects ul li:hover{
+    transform: rotateY(180deg);
+  }
+
+  #projects ul li .front{
+    border-radius: 5px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    color: #000;
+    float: left;
+    margin-bottom: 5%;
+    position: absolute;
+  }
+
+  #projects ul li .front:hover {
+      visibility: hidden;
+  }
+  
+  /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+   #projects ul li .back {
+    width: 320px;
+    height: auto;
+    margin-bottom: 5%;
+    border-radius: 5px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    background: #f5f5f5;
+    color: #333;
+    text-align: center;
+    transform: rotateY(180deg);
+    position: absolute;
+  } 
+
+/* CONTACT ***** */
 
 form input, textarea {
     font-family: 'Roboto Slab', serif;
@@ -238,13 +288,15 @@ form input:first-child {
 
 form input {
     width: 552px;
-    height: 30px
+    height: 30px;
+    background-color: #f5f5f5;
 }
 
 form textarea {
     width: 550px;
     height: 200px;
     resize: none;
+    background-color: #f5f5f5;
 }
 
 .input_text {
@@ -284,6 +336,36 @@ footer p {
     padding-top: 30px;
 }
 
+.fa-github {
+    display: inline-block;
+    font-size: 15pt;
+    cursor: pointer;
+    text-align: center;
+    margin: 0px 10px 0 10px;
+    z-index: -1;
+    color: #000;
+}
+
+.fa-facebook-square {
+    display: inline-block;
+    font-size: 15pt;
+    cursor: pointer;
+    text-align: center;
+    margin: 0px 10px 0 10px;
+    z-index: -1;
+    color: #000;
+}
+
+.fa-xing {
+    display: inline-block;
+    font-size: 15pt;
+    cursor: pointer;
+    text-align: center;
+    margin: 0px 10px 0 10px;
+    z-index: -1;
+    color: #000;
+}
+
 @keyframes drop {
     0% {
         opacity: 0;
@@ -297,7 +379,7 @@ footer p {
 
 /* MEDIA QUERIES *****/
 
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1690px) {
     header {
         height: 7%;
     }
@@ -353,23 +435,64 @@ footer p {
         margin-left: 7%;
     }
 
-    #projects {
-        width: auto;
-    }
-
     #projects ul li {
-        width: 100%;
-        float: none;
+        width: 45%;
+        float: left;
+        margin-bottom: 5%;
+        transition: all 0.8s ease;
+        transform-style: preserve-3d;
     }
-
-    #projects ul li:last-child {
-        padding-bottom: 20%;
-    }
-
+    
     #projects img {
-        width: 30%;
+        width: 320px;
         height: auto;
+        border-radius: 5px;
+        animation: drop 1.5s ease;
     }
+    
+    #projects img:hover {
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3)
+        
+    }
+    
+      #projects ul li:hover{
+        transform: rotateY(180deg);
+      }
+    
+      #projects ul li .front{
+        border-radius: 5px;
+        backface-visibility: hidden;
+        overflow: hidden;
+        color: #000;
+        width: 320px;
+        float: left;
+        margin-bottom: 5%;
+        position: absolute;
+        text-align: center;
+        height: auto;
+      }
+    
+      #projects ul li .front:hover {
+          visibility: hidden;
+      }
+      
+      /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+      #projects ul li .back {
+        position: absolute;
+        width: 320px;
+        height: auto;
+        border-radius: 5px;
+        backface-visibility: hidden;
+        overflow: hidden;
+        background: #f5f5f5;
+        color: #333;
+        text-align: center;
+        transform: rotateY(180deg);
+      }
 
     form input, form textarea {
         width: 60%;
@@ -380,7 +503,7 @@ footer p {
     }
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1280) {
     header {
         height: 7%;
     }
@@ -463,7 +586,132 @@ footer p {
     }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1024px) {
+    header {
+        height: 7%;
+    }
+
+    header nav {
+        margin-top: 0;
+    }
+
+    header nav ul li {
+        font-size: 12px;
+    }
+
+    #home #videoBG {
+        position:absolute;
+        line-height: 0;
+        z-index: -1;
+        min-width: 100vw;
+        min-height: 100vh;
+        overflow-x: hidden;
+        align-items:center;
+        display: flex;
+        margin:auto;
+    }
+    
+    #home h1 {
+        font-size: 90px;
+        margin-top: 550px;
+    }
+
+    #about {
+        height: 100vh;
+        padding-top: 0;
+    }
+
+    #about h1 {
+        text-align: center;
+        padding-top: 0;
+    }
+
+    #about .info p {
+        width: 85%;
+        text-align: justify;
+    }
+
+    #about .info img {
+        width: 60%;
+        height: auto;
+    }
+
+    #about figcaption {
+        float: left;
+        margin-top: 70%;
+        text-align: justify;
+        margin-left: 7%;
+    }
+
+    #projects ul li {
+        width: 45%;
+        float: left;
+        margin-bottom: 5%;
+        transition: all 0.8s ease;
+        transform-style: preserve-3d;
+    }
+    
+    #projects img {
+        width: 320px;
+        height: auto;
+        border-radius: 5px;
+        animation: drop 1.5s ease;
+    }
+    
+    #projects img:hover {
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3)
+        
+    }
+    
+      #projects ul li:hover{
+        transform: rotateY(180deg);
+      }
+    
+      #projects ul li .front{
+        border-radius: 5px;
+        backface-visibility: hidden;
+        overflow: hidden;
+        color: #000;
+        width: 320px;
+        float: left;
+        margin-bottom: 5%;
+        position: absolute;
+        text-align: center;
+        height: auto;
+      }
+    
+      #projects ul li .front:hover {
+          visibility: hidden;
+      }
+      
+      /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+      #projects ul li .back {
+        position: absolute;
+        width: 320px;
+        height: auto;
+        border-radius: 5px;
+        backface-visibility: hidden;
+        overflow: hidden;
+        background: #f5f5f5;
+        color: #333;
+        text-align: center;
+        transform: rotateY(180deg);
+      }
+
+    form input, form textarea {
+        width: 60%;
+    }
+
+    .button {
+        width: 62%;
+    }
+}
+
+@media screen and (max-width: 980px) {
     header {
         height: 7%;
     }
@@ -548,7 +796,7 @@ footer p {
 
 /* TABLETS */
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
     header {
         height: 7%;
     }
@@ -575,11 +823,17 @@ footer p {
     
     #home h1 {
         font-size: 90px;
-        margin-top: 275px;
+        margin-top: 390px;
     }
 
     #about {
-        height: 110vh;
+        height: 150vh;
+        text-align: center;
+    }
+
+    .info {
+        width: 90%;
+        margin-left: 2%;
     }
 
     #about h1 {
@@ -593,34 +847,86 @@ footer p {
     }
 
     #about .info img {
-        width: 60%;
+        width: 45%;
         height: auto;
     }
 
     #about figcaption {
         float: left;
-        margin-top: 60%;
+        margin-top: 20%;
         text-align: justify;
-        margin-left: 13%;
+        margin-left: 10%;
+        font-size: 12pt;
     }
 
-    #projects {
-        width: auto;
-    }
+    #projects ul {
+        position: relative;
+        text-align: center;
+        display: list-item;
+        max-width: 100%;
+        margin: auto;
+        list-style: none;
+        }
 
-    #projects ul li {
-        width: 100%;
-        float: none;
-    }
-
-    #projects ul li:last-child {
-        padding-bottom: 20%;
-    }
-
+        #projects ul li {
+            width: 50%;
+            float: left;
+            margin-bottom: 5%;
+            transition: all 0.8s ease;
+            transform-style: preserve-3d;
+            padding-left: 5%;
+            list-style: none;
+        }
+    
     #projects img {
-        width: 40%;
+        width: 250px;
         height: auto;
+        border-radius: 5px;
+        animation: drop 1.5s ease;
     }
+    
+    #projects img:hover {
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3)
+        
+    }
+    
+      #projects ul li:hover{
+        transform: rotateY(180deg);
+      }
+    
+      #projects ul li .front{
+        border-radius: 5px;
+        backface-visibility: hidden;
+        overflow: hidden;
+        color: #000;
+        width: 320px;
+        float: left;
+        margin-bottom: 5%;
+        position: absolute;
+        text-align: center;
+        height: auto;
+      }
+    
+      #projects ul li .front:hover {
+          visibility: hidden;
+      }
+      
+      /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+      #projects ul li .back {
+        width: 320px;
+        height: auto;
+        border-radius: 5px;
+        backface-visibility: hidden;
+        overflow: hidden;
+        background: #f5f5f5;
+        color: #333;
+        text-align: center;
+        transform: rotateY(180deg);
+      }
 
     form input, form textarea {
         width: 60%;
@@ -631,7 +937,138 @@ footer p {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
+    header {
+        height: 7%;
+    }
+
+    header nav {
+        margin-top: 0;
+    }
+
+    header nav ul li {
+        font-size: 12px;
+    }
+
+    #home #videoBG {
+        position:absolute;
+        line-height: 0;
+        z-index: -1;
+        min-width: 100vw;
+        min-height: 100vh;
+        overflow-x: hidden;
+        align-items:center;
+        display: flex;
+        margin:auto;
+    }
+    
+    #home h1 {
+        font-size: 90px;
+        margin-top: 350px;
+    }
+
+    #about {
+        height: 150vh;
+        text-align: center;
+    }
+
+    .info {
+        width: 90%;
+        margin-left: 2%;
+    }
+
+    #about h1 {
+        text-align: center;
+        padding-top: 0;
+    }
+
+    #about .info p {
+        width: 85%;
+        text-align: justify;
+    }
+
+    #about .info img {
+        width: 45%;
+        height: auto;
+    }
+
+    #about figcaption {
+        float: left;
+        margin-top: 20%;
+        text-align: justify;
+        margin-left: 10%;
+    }
+
+    #projects ul li {
+        width: 45%;
+        float: left;
+        margin-bottom: 5%;
+        transition: all 0.8s ease;
+        transform-style: preserve-3d;
+        padding-left: 5%
+    }
+    
+    #projects img {
+        width: 320px;
+        height: auto;
+        border-radius: 5px;
+        animation: drop 1.5s ease;
+    }
+    
+    #projects img:hover {
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3)
+        
+    }
+    
+      #projects ul li:hover{
+        transform: rotateY(180deg);
+      }
+    
+      #projects ul li .front{
+        border-radius: 5px;
+        backface-visibility: hidden;
+        overflow: hidden;
+        color: #000;
+        width: 320px;
+        float: left;
+        margin-bottom: 5%;
+        position: absolute;
+        text-align: center;
+        height: auto;
+      }
+    
+      #projects ul li .front:hover {
+          visibility: hidden;
+      }
+      
+      /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+      #projects ul li .back {
+        position: absolute;
+        width: 320px;
+        height: auto;
+        border-radius: 5px;
+        backface-visibility: hidden;
+        overflow: hidden;
+        background: #f5f5f5;
+        color: #333;
+        text-align: center;
+        transform: rotateY(180deg);
+      }
+
+    form input, form textarea {
+        width: 60%;
+    }
+
+    .button {
+        width: 62%;
+    }
+}
+
+@media screen and (max-width: 480px) {
 
     header nav {
         margin: 0;
@@ -641,10 +1078,10 @@ footer p {
     .fa-align-justify {
         display: inline-block;
         font-size: 15px;
-        width: 100%;
         cursor: pointer;
         text-align: right;
-        margin: 35px 65px 0 0;
+        margin-top: 50px;
+        margin: 25px 0px 30px 275px;
         z-index: -1;
     }
 
@@ -710,8 +1147,8 @@ footer p {
     }
 
 #home h1 {
-    font-size: 70px;
-    margin-top: 55%;
+    font-size: 50px;
+    margin-top: 79%;
 }
 
 #home #videoBG {
@@ -726,7 +1163,180 @@ footer p {
     margin:auto;
 }
 
-#about { height: 125vh; }
+#about { height: 160vh; }
+
+#about h1 {
+    text-align: center;
+    padding-top: 0;
+}
+
+#about .info img {
+    width: 45%;
+    animation: drop 1.5s ease;
+}
+
+.info {
+    width: 100%;
+    margin-left: 2%;
+}
+
+#about figcaption {
+    float: left;
+    margin-top: 30%;
+    text-align: justify;
+    margin-left: 6%;
+}
+
+#projects ul {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+#projects ul li {
+    width: 60%;
+    margin-bottom: 5%;
+    transition: all 0.8s ease;
+    transform-style: preserve-3d;
+    padding-left: 5%;
+    position: absolute;
+}
+
+#projects img {
+    height: auto;
+    border-radius: 5px;
+    animation: drop 1.5s ease;
+}
+
+#projects img:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3)
+    
+}
+
+  #projects ul li:hover{
+    transform: rotateY(180deg);
+  }
+
+  #projects ul li .front{
+    border-radius: 5px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    color: #000;
+    margin-bottom: 5%;
+    position: absolute;
+    text-align: center;
+    height: auto;
+  }
+
+  #projects ul li .front:hover {
+      visibility: hidden;
+  }
+  
+  /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+  #projects ul li .back {
+    height: auto;
+    border-radius: 5px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    background: #f5f5f5;
+    color: #333;
+    text-align: center;
+    transform: rotateY(180deg);
+  }
+
+form input, form textarea {
+    width: 70%;
+}
+}
+
+@media screen and (max-width: 380px) {
+    header nav {
+        margin: 0;
+        float: none;
+    }
+
+    .fa-align-justify:hover {
+        opacity: 0.5;
+    }
+
+    button {
+        font-size: 16px;
+        border: none;
+        display: inline;
+        box-shadow: none;
+        cursor: pointer;
+        margin: 24px 90px 0 0;
+    }    
+
+    header nav ul {
+        height: 0;
+        overflow: hidden;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background: none;
+        transform-origin: top;
+        transform: perspective(1000px) rotateX(-90deg);
+        transition: 0.5s;
+    }
+
+    header nav ul.open {
+        transform: perspective(1000px) rotateX(0deg);
+        height: auto;
+    }
+
+    header nav ul li {
+        width: 100%;
+        padding: 5px 0;
+        list-style: none;
+        /*display: block;*/
+        margin: 0;
+        font-size: 11px;
+        border-top: 1px solid #dddddd;
+        background-color: #dddddd
+    }
+
+    header nav ul li:hover {
+        background-color: #eeeeee;
+    }
+
+    header nav ul li a {
+        display: block;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        background: #262626;
+        color: #fff;
+        border-bottom: 1px solid rgba(0,0,0,.2);
+    }
+    
+    header nav ul li a:hover {
+        background: #0d7ad0;
+    }
+
+#home h1 {
+    font-size: 40px;
+    margin-top: 72%;
+}
+
+#home #videoBG {
+
+    position:absolute;
+    line-height: 0;
+    z-index: -10;
+    width: 100vw;
+    overflow-x: hidden;
+    align-items:center;
+    display: flex;
+    margin:auto;
+}
+
+#about { height: 170vh; }
 
 #about h1 {
     text-align: center;
@@ -736,6 +1346,395 @@ footer p {
 #about .info img {
     width: 40%;
     animation: drop 1.5s ease;
+}
+
+#about figcaption {
+    float: left;
+    margin-top: 30%;
+    text-align: justify;
+    margin-left: 6%;
+}
+
+.info {
+    width: 100%;
+    margin-left: 2%;
+}
+
+#work {
+    z-index: -1;
+}
+
+#projects {
+    width: 375;
+    margin: 0 auto 0 auto;
+    transform: translate(-50%, -50%);
+}
+
+#projects ul {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+#projects ul li {
+    width: 60%;
+    margin-bottom: 5%;
+    transition: all 0.8s ease;
+    transform-style: preserve-3d;
+    padding-left: 5%;
+    position: absolute;
+}
+
+#projects img {
+    height: auto;
+    border-radius: 5px;
+    animation: drop 1.5s ease;
+}
+
+#projects img:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3)
+    
+}
+
+  #projects ul li:hover{
+    transform: rotateY(180deg);
+  }
+
+  #projects ul li .front{
+    border-radius: 5px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    color: #000;
+    margin-bottom: 5%;
+    position: absolute;
+    text-align: center;
+    height: auto;
+  }
+
+  #projects ul li .front:hover {
+      visibility: hidden;
+  }
+  
+  /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+  #projects ul li .back {
+    height: auto;
+    border-radius: 5px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    background: #f5f5f5;
+    color: #333;
+    text-align: center;
+    transform: rotateY(180deg);
+  }
+
+form input, form textarea {
+    width: 70%;
+}
+
+.fa-align-justify {
+    display: inline-block;
+    font-size: 15px;
+    width: 100%;
+    cursor: pointer;
+    text-align: right;
+    margin: 20px 995px 0 0;
+    z-index: -1;
+}
+}
+
+@media only screen 
+  and (max-width: 380px) 
+  and (min-height: 800px) {
+    header nav {
+        margin: 0;
+        float: none;
+    }
+
+    .fa-align-justify:hover {
+        opacity: 0.5;
+    }
+
+    button {
+        font-size: 16px;
+        border: none;
+        display: inline;
+        box-shadow: none;
+        cursor: pointer;
+        margin: 24px 90px 0 0;
+    }    
+
+    header nav ul {
+        height: 0;
+        overflow: hidden;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background: none;
+        transform-origin: top;
+        transform: perspective(1000px) rotateX(-90deg);
+        transition: 0.5s;
+    }
+
+    header nav ul.open {
+        transform: perspective(1000px) rotateX(0deg);
+        height: auto;
+    }
+
+    header nav ul li {
+        width: 100%;
+        padding: 5px 0;
+        list-style: none;
+        /*display: block;*/
+        margin: 0;
+        font-size: 11px;
+        border-top: 1px solid #dddddd;
+        background-color: #dddddd
+    }
+
+    header nav ul li:hover {
+        background-color: #eeeeee;
+    }
+
+    header nav ul li a {
+        display: block;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        background: #262626;
+        color: #fff;
+        border-bottom: 1px solid rgba(0,0,0,.2);
+    }
+    
+    header nav ul li a:hover {
+        background: #0d7ad0;
+    }
+
+#home h1 {
+    font-size: 40px;
+    margin-top: 95%;
+}
+
+#home #videoBG {
+
+    position:absolute;
+    line-height: 0;
+    z-index: -10;
+    width: 100vw;
+    overflow-x: hidden;
+    align-items:center;
+    display: flex;
+    margin:auto;
+}
+
+#about { height: 170vh; }
+
+#about h1 {
+    text-align: center;
+    padding-top: 0;
+}
+
+#about .info img {
+    width: 40%;
+    animation: drop 1.5s ease;
+}
+
+#about figcaption {
+    float: left;
+    margin-top: 30%;
+    text-align: justify;
+    margin-left: 6%;
+}
+
+.info {
+    width: 100%;
+    margin-left: 2%;
+}
+
+#work {
+    z-index: -1;
+}
+
+#projects ul {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+#projects ul li {
+    width: 60%;
+    margin-bottom: 5%;
+    transition: all 0.8s ease;
+    transform-style: preserve-3d;
+    padding-left: 5%;
+    position: absolute;
+}
+
+#projects img {
+    height: auto;
+    border-radius: 5px;
+    animation: drop 1.5s ease;
+}
+
+#projects img:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3)
+    
+}
+
+  #projects ul li:hover{
+    transform: rotateY(180deg);
+  }
+
+  #projects ul li .front{
+    border-radius: 5px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    color: #000;
+    margin-bottom: 5%;
+    position: absolute;
+    text-align: center;
+    height: auto;
+  }
+
+  #projects ul li .front:hover {
+      visibility: hidden;
+  }
+  
+  /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+  #projects ul li .back {
+    height: auto;
+    border-radius: 5px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    background: #f5f5f5;
+    color: #333;
+    text-align: center;
+    transform: rotateY(180deg);
+  }
+
+form input, form textarea {
+    width: 70%;
+}
+
+.fa-align-justify {
+    display: inline-block;
+    font-size: 15px;
+    width: 100%;
+    cursor: pointer;
+    text-align: right;
+    margin: 20px 995px 0 0;
+    z-index: -1;
+}
+}
+
+@media screen and (max-width: 360px) {
+    header nav {
+        margin: 0;
+        float: none;
+    }
+
+    .fa-align-justify:hover {
+        opacity: 0.5;
+    }
+
+    button {
+        font-size: 16px;
+        border: none;
+        display: inline;
+        box-shadow: none;
+        cursor: pointer;
+        margin: 24px 90px 0 0;
+    }    
+
+    header nav ul {
+        height: 0;
+        overflow: hidden;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background: none;
+        transform-origin: top;
+        transform: perspective(1000px) rotateX(-90deg);
+        transition: 0.5s;
+    }
+
+    header nav ul.open {
+        transform: perspective(1000px) rotateX(0deg);
+        height: auto;
+    }
+
+    header nav ul li {
+        width: 100%;
+        padding: 5px 0;
+        list-style: none;
+        /*display: block;*/
+        margin: 0;
+        font-size: 11px;
+        border-top: 1px solid #dddddd;
+        background-color: #dddddd
+    }
+
+    header nav ul li:hover {
+        background-color: #eeeeee;
+    }
+
+    header nav ul li a {
+        display: block;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        background: #262626;
+        color: #fff;
+        border-bottom: 1px solid rgba(0,0,0,.2);
+    }
+    
+    header nav ul li a:hover {
+        background: #0d7ad0;
+    }
+
+#home h1 {
+    font-size: 40px;
+    margin-top: 72%;
+}
+
+#home #videoBG {
+
+    position:absolute;
+    line-height: 0;
+    z-index: -10;
+    width: 100vw;
+    overflow-x: hidden;
+    align-items:center;
+    display: flex;
+    margin:auto;
+}
+
+#about { height: 185vh; }
+
+#about h1 {
+    text-align: center;
+    padding-top: 0;
+}
+
+#about .info img {
+    width: 40%;
+    animation: drop 1.5s ease;
+}
+
+#about figcaption {
+    float: left;
+    margin-top: 30%;
+    text-align: justify;
+    margin-left: 6%;
 }
 
 .info {
@@ -755,529 +1754,14 @@ footer p {
 form input, form textarea {
     width: 70%;
 }
-}
 
-/* MOBILE ******/
-
-@media screen and (max-width: 600px) {
-    header nav {
-        margin: 0;
-        float: none;
-    }
-
-    .fa-align-justify {
-        display: inline-block;
-        font-size: 15px;
-        width: 100%;
-        cursor: pointer;
-        text-align: right;
-        margin: 15px 35px 0 0;
-        z-index: -1;
-    }
-
-    .fa-align-justify:hover {
-        opacity: 0.5;
-    }
-
-    button {
-        font-size: 16px;
-        border: none;
-        display: inline;
-        box-shadow: none;
-        cursor: pointer;
-        margin: 24px 90px 0 0;
-    }    
-
-    header nav ul {
-        height: 0;
-        overflow: hidden;
-
-        position: relative;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        background: none;
-        transform-origin: top;
-        transform: perspective(1000px) rotateX(-90deg);
-        transition: 0.5s;
-    }
-
-    header nav ul.open {
-        transform: perspective(1000px) rotateX(0deg);
-        height: auto;
-    }
-
-    header nav ul li {
-        width: 100%;
-        padding: 5px 0;
-        list-style: none;
-        /*display: block;*/
-        margin: 0;
-        font-size: 11px;
-        border-top: 1px solid #dddddd;
-        background-color: #dddddd
-    }
-
-    header nav ul li:hover {
-        background-color: #eeeeee;
-    }
-
-    header nav ul li a {
-        display: block;
-        padding: 10px;
-        text-align: center;
-        text-decoration: none;
-        background: #262626;
-        color: #fff;
-        border-bottom: 1px solid rgba(0,0,0,.2);
-    }
-    
-    header nav ul li a:hover {
-        background: #0d7ad0;
-    }
-
-#home h1 {
-    font-size: 50px;
-    margin-top: 60%;
-}
-
-#home #videoBG {
-
-    position:absolute;
-    line-height: 0;
-    z-index: -10;
-    width: 100vw;
-    overflow-x: hidden;
-    align-items:center;
-    display: flex;
-    margin:auto;
-}
-
-#about { height: 150vh; }
-
-#about h1 {
-    text-align: center;
-    padding-top: 0%;
-}
-
-#about .info img {
-    width: 50%;
-    animation: drop 1.5s ease;
-}
-
-.info {
+.fa-align-justify {
+    display: inline-block;
+    font-size: 15px;
     width: 100%;
-    margin-left: 2%;
-}
-
-#work {
+    cursor: pointer;
+    text-align: right;
+    margin: 20px 995px 0 0;
     z-index: -1;
-}
-
-#projects img {
-    width: 50%;
-    height: auto;
-}
-
-form input, form textarea {
-    width: 70%;
-}
-}
-
-@media screen and (max-width: 480px) {
-    
-    header nav {
-        margin: 0;
-        float: none;
-    }
-
-    .fa-align-justify {
-        display: inline-block;
-        font-size: 15px;
-        width: 100%;
-        cursor: pointer;
-        text-align: right;
-        margin: 15px 35px 0 0;
-        z-index: -1;
-    }
-
-    .fa-align-justify:hover {
-        opacity: 0.5;
-    }
-
-    button {
-        font-size: 16px;
-        border: none;
-        display: inline;
-        box-shadow: none;
-        cursor: pointer;
-        margin: 24px 90px 0 0;
-    }    
-
-    header nav ul {
-        height: 0;
-        overflow: hidden;
-        position: relative;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        background: none;
-        transform-origin: top;
-        transform: perspective(1000px) rotateX(-90deg);
-        transition: 0.5s;
-    }
-
-    header nav ul.open {
-        transform: perspective(1000px) rotateX(0deg);
-        height: auto;
-    }
-
-    header nav ul li {
-        width: 100%;
-        padding: 5px 0;
-        list-style: none;
-        /*display: block;*/
-        margin: 0;
-        font-size: 11px;
-        border-top: 1px solid #dddddd;
-        background-color: #dddddd
-    }
-
-    header nav ul li:hover {
-        background-color: #eeeeee;
-    }
-
-    header nav ul li a {
-        display: block;
-        padding: 10px;
-        text-align: center;
-        text-decoration: none;
-        background: #262626;
-        color: #fff;
-        border-bottom: 1px solid rgba(0,0,0,.2);
-    }
-    
-    header nav ul li a:hover {
-        background: #0d7ad0;
-    }
-
-#home h1 {
-    font-size: 50px;
-    margin-top: 70%;
-}
-
-#home #videoBG {
-
-    position:absolute;
-    line-height: 0;
-    z-index: -10;
-    width: 100vw;
-    overflow-x: hidden;
-    align-items:center;
-    display: flex;
-    margin:auto;
-}
-
-#about { height: 170vh; }
-
-#about h1 {
-    text-align: center;
-    padding-top: 0%;
-}
-
-#about .info img {
-    width: 65%;
-    animation: drop 1.5s ease;
-}
-
-#about figcaption {
-    float: left;
-    margin-top: 30%;
-    text-align: justify;
-    margin-left: 15%;
-}
-
-.info {
-    width: 100%;
-    margin-left: 2%;
-}
-
-#work {
-    z-index: -1;
-}
-
-#projects img {
-    width: 70%;
-    height: auto;
-}
-
-form input, form textarea {
-    width: 70%;
-}
-}
-
-@media screen and (max-width: 375px) {
-    
-    header nav {
-        margin: 0;
-        float: none;
-    }
-
-    .fa-align-justify {
-        display: inline-block;
-        font-size: 15px;
-        width: 100%;
-        cursor: pointer;
-        text-align: right;
-        margin: 15px 35px 0 0;
-        z-index: -1;
-    }
-
-    .fa-align-justify:hover {
-        opacity: 0.5;
-    }
-
-    button {
-        font-size: 16px;
-        border: none;
-        display: inline;
-        box-shadow: none;
-        cursor: pointer;
-        margin: 24px 90px 0 0;
-    }    
-
-    header nav ul {
-        height: 0;
-        overflow: hidden;
-        position: relative;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        background: none;
-        transform-origin: top;
-        transform: perspective(1000px) rotateX(-90deg);
-        transition: 0.5s;
-    }
-
-    header nav ul.open {
-        transform: perspective(1000px) rotateX(0deg);
-        height: auto;
-    }
-
-    header nav ul li {
-        width: 100%;
-        padding: 5px 0;
-        list-style: none;
-        /*display: block;*/
-        margin: 0;
-        font-size: 11px;
-        border-top: 1px solid #dddddd;
-        background-color: #dddddd
-    }
-
-    header nav ul li:hover {
-        background-color: #eeeeee;
-    }
-
-    header nav ul li a {
-        display: block;
-        padding: 10px;
-        text-align: center;
-        text-decoration: none;
-        background: #262626;
-        color: #fff;
-        border-bottom: 1px solid rgba(0,0,0,.2);
-    }
-    
-    header nav ul li a:hover {
-        background: #0d7ad0;
-    }
-
-#home h1 {
-    font-size: 50px;
-    margin-top: 70%;
-}
-
-#home #videoBG {
-
-    position:absolute;
-    line-height: 0;
-    z-index: -10;
-    width: 100vw;
-    overflow-x: hidden;
-    align-items:center;
-    display: flex;
-    margin:auto;
-}
-
-#about { height: 180vh; }
-
-#about h1 {
-    text-align: center;
-    padding-top: 0%;
-}
-
-#about .info img {
-    width: 65%;
-    animation: drop 1.5s ease;
-}
-
-#about figcaption {
-    float: left;
-    margin-top: 30%;
-    text-align: justify;
-    margin-left: 20%;
-}
-
-.info {
-    width: 100%;
-    margin-left: 2%;
-}
-
-#work {
-    z-index: -1;
-}
-
-#projects img {
-    width: 70%;
-    height: auto;
-}
-
-form input, form textarea {
-    width: 70%;
-}
-}
-
-@media screen and (max-width: 320px) {
-    
-    header nav {
-        margin: 0;
-        float: none;
-    }
-
-    .fa-align-justify {
-        display: inline-block;
-        font-size: 15px;
-        width: 100%;
-        cursor: pointer;
-        text-align: right;
-        margin: 15px 35px 0 0;
-        z-index: -1;
-        overflow: hidden;
-    }
-
-    .fa-align-justify:hover {
-        opacity: 0.5;
-    }
-
-    button {
-        font-size: 16px;
-        border: none;
-        display: inline;
-        box-shadow: none;
-        cursor: pointer;
-        margin: 24px 90px 0 0;
-    }    
-
-    header nav ul {
-        height: 0;
-        overflow: hidden;
-
-        position: relative;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        background: none;
-        transform-origin: top;
-        transform: perspective(1000px) rotateX(-90deg);
-        transition: 0.5s;
-    }
-
-    header nav ul.open {
-        transform: perspective(1000px) rotateX(0deg);
-        height: auto;
-    }
-
-    header nav ul li {
-        width: 100%;
-        padding: 5px 0;
-        list-style: none;
-        /*display: block;*/
-        margin: 0;
-        font-size: 11px;
-        border-top: 1px solid #dddddd;
-        background-color: #dddddd
-    }
-
-    header nav ul li:hover {
-        background-color: #eeeeee;
-    }
-
-    header nav ul li a {
-        display: block;
-        padding: 10px;
-        text-align: center;
-        text-decoration: none;
-        background: #262626;
-        color: #fff;
-        border-bottom: 1px solid rgba(0,0,0,.2);
-    }
-    
-    header nav ul li a:hover {
-        background: #0d7ad0;
-    }
-
-#home h1 {
-    font-size: 35px;
-    margin-top: 70%;
-}
-
-#home #videoBG {
-
-    position:absolute;
-    line-height: 0;
-    z-index: -10;
-    width: 100vw;
-    overflow-x: hidden;
-    align-items:center;
-    display: flex;
-    margin:auto;
-}
-
-#about { height: 220vh; }
-
-#about h1 {
-    text-align: center;
-    padding-top: 0%;
-}
-
-#about .info img {
-    width: 70%;
-    animation: drop 1.5s ease;
-}
-
-.info {
-    width: 100%;
-    margin-left: 2%;
-}
-
-#about figcaption {
-    float: left;
-    margin-top: 45%;
-    text-align: justify;
-    margin-left: 13%;
-}
-
-#work {
-    z-index: -1;
-}
-
-#projects img {
-    width: 70%;
-    height: auto;
-}
-
-form input, form textarea {
-    width: 70%;
 }
 }
