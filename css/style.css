@@ -192,6 +192,9 @@ header nav ul li:hover {
 
 #work .white h1 {
     color: #f5f5f5;
+    text-align: center;
+    padding: 3%;
+    float: right;
 }
 
 /* PROJECTS ******/
@@ -200,6 +203,9 @@ header nav ul li:hover {
 /*     display: flex; 
     align-items: center;  
     justify-content: center; */
+    height: 125vh;
+    width: 900px;
+    margin: 0 auto 0 auto;
 }
 
 #projects ul {
@@ -208,66 +214,63 @@ header nav ul li:hover {
     display: block;
     max-width: 100%;
     margin: auto;
+    padding: 0%;
     }
 
-#projects ul li {
-    width: 25%;
-    transition: all 0.8s ease;
-    transform-style: preserve-3d;
-    padding-left: 5%;
-    position: relative;
-    display: inline-block;
-    max-width: 30%;
-    align-self: flex-start;
-}
+    #projects ul li {
+        transform-style: preserve-3d;
+        width: 45%;
+        transition: all 0.8s ease;
+        float: left;
+        margin-bottom: 5%;
+    }
 
-#projects img {
-    width: 320px;
-    height: auto;
-    border-radius: 5px;
-    animation: drop 1.5s ease;
-    margin: 0 0 0px 0;
-}
+    #projects ul li:hover{
+        transform: rotateY(180deg);
+      }
 
-#projects img:hover {
-    transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3)
-}
+    #projects img {
+        width: 320px;
+        height: auto;
+        border-radius: 5px;
+        animation: drop 1.5s ease;
+        margin: 0 0 0px 0;
+    }
 
-  #projects ul li:hover{
-    transform: rotateY(180deg);
-  }
+    #projects img:hover {
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3)
+    }
 
-  #projects ul li .front{
-    border-radius: 5px;
-    backface-visibility: hidden;
-    overflow: hidden;
-    color: #000;
-    float: left;
-    margin-bottom: 5%;
-    position: absolute;
-  }
+    #projects ul li .front{
+        color: #000;
+        float: left;
+        border-radius: 5px;
+        backface-visibility: hidden;
+        overflow: hidden;
+        position: relative;
+      }
 
-  #projects ul li .front:hover {
-      visibility: hidden;
-  }
-  
-  /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+      #projects ul li .front:hover {
+        visibility: hidden;
+    }
+
+    /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
    #projects ul li .back {
-    width: 320px;
-    height: auto;
-    margin-bottom: 5%;
-    border-radius: 5px;
-    backface-visibility: hidden;
-    overflow: hidden;
-    background: #f5f5f5;
-    color: #333;
-    text-align: center;
-    transform: rotateY(180deg);
-    position: absolute;
+       width: 320px;
+       transform: rotateY(180deg);
+       backface-visibility: hidden;
+       border-radius: 5px;
+       backface-visibility: hidden;
+       overflow: hidden;
+       position: absolute;
+       background: #f5f5f5;
+       color: #333;
+       float: left;
+
   } 
 
 /* CONTACT ***** */
@@ -643,64 +646,80 @@ footer p {
         margin-left: 7%;
     }
 
-    #projects ul li {
-        width: 45%;
-        float: left;
-        margin-bottom: 5%;
-        transition: all 0.8s ease;
-        transform-style: preserve-3d;
-    }
-    
-    #projects img {
-        width: 320px;
-        height: auto;
-        border-radius: 5px;
-        animation: drop 1.5s ease;
-    }
-    
-    #projects img:hover {
-        transform: scale(1.1);
-        -webkit-transform: scale(1.1);
-        -moz-transform: scale(1.1);
-        -o-transform: scale(1.1);
-        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3)
+    #projects {
+        /*     display: flex; 
+            align-items: center;  
+            justify-content: center; */
+            height: 125vh;
+            width: 900px;
+            margin: 0 auto 0 auto;
+        }
         
-    }
-    
-      #projects ul li:hover{
-        transform: rotateY(180deg);
-      }
-    
-      #projects ul li .front{
-        border-radius: 5px;
-        backface-visibility: hidden;
-        overflow: hidden;
-        color: #000;
-        width: 320px;
-        float: left;
-        margin-bottom: 5%;
-        position: absolute;
-        text-align: center;
-        height: auto;
-      }
-    
-      #projects ul li .front:hover {
-          visibility: hidden;
-      }
-      
-      /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
-      #projects ul li .back {
-        position: absolute;
-        width: 320px;
-        height: auto;
-        border-radius: 5px;
-        backface-visibility: hidden;
-        overflow: hidden;
-        background: #f5f5f5;
-        color: #333;
-        text-align: center;
-        transform: rotateY(180deg);
-      }
+        #projects ul {
+            position: relative;
+            text-align: center;
+            display: block;
+            max-width: 100%;
+            margin: auto;
+            padding: 0%;
+            }
+        
+            #projects ul li {
+                transform-style: preserve-3d;
+                width: 45%;
+                transition: all 0.8s ease;
+                float: left;
+                margin-bottom: 5%;
+                margin-left: 3%;
+            }
+        
+            #projects ul li:hover{
+                transform: rotateY(180deg);
+              }
+        
+            #projects img {
+                width: 320px;
+                height: auto;
+                border-radius: 5px;
+                animation: drop 1.5s ease;
+                margin: 0 0 0px 0;
+            }
+        
+            #projects img:hover {
+                transform: scale(1.1);
+                -webkit-transform: scale(1.1);
+                -moz-transform: scale(1.1);
+                -o-transform: scale(1.1);
+                box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3)
+            }
+        
+            #projects ul li .front{
+                color: #000;
+                float: left;
+                border-radius: 5px;
+                backface-visibility: hidden;
+                overflow: hidden;
+                position: relative;
+              }
+        
+              #projects ul li .front:hover {
+                visibility: hidden;
+            }
+        
+            /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+           #projects ul li .back {
+               width: 320px;
+               transform: rotateY(180deg);
+               backface-visibility: hidden;
+               border-radius: 5px;
+               backface-visibility: hidden;
+               overflow: hidden;
+               position: absolute;
+               background: #f5f5f5;
+               color: #333;
+               float: left;
+        
+          } 
 
     form input, form textarea {
         width: 60%;
@@ -797,6 +816,10 @@ footer p {
 /* TABLETS */
 
 @media screen and (max-width: 768px) {
+
+    html {
+        max-width: 768px;
+    }
     header {
         height: 7%;
     }
@@ -853,80 +876,86 @@ footer p {
 
     #about figcaption {
         float: left;
-        margin-top: 20%;
+        margin-top: 50%;
         text-align: justify;
         margin-left: 10%;
         font-size: 12pt;
     }
 
-    #projects ul {
-        position: relative;
-        text-align: center;
-        display: list-item;
-        max-width: 100%;
-        margin: auto;
-        list-style: none;
+    #projects {
+        /*     display: flex; 
+            align-items: center;  
+            justify-content: center; */
+            height: 125vh;
+            width: 900px;
+            margin: 0 auto 0 auto;
         }
-
-        #projects ul li {
-            width: 50%;
-            float: left;
-            margin-bottom: 5%;
-            transition: all 0.8s ease;
-            transform-style: preserve-3d;
-            padding-left: 5%;
-            list-style: none;
-        }
-    
-    #projects img {
-        width: 250px;
-        height: auto;
-        border-radius: 5px;
-        animation: drop 1.5s ease;
-    }
-    
-    #projects img:hover {
-        transform: scale(1.1);
-        -webkit-transform: scale(1.1);
-        -moz-transform: scale(1.1);
-        -o-transform: scale(1.1);
-        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3)
         
-    }
-    
-      #projects ul li:hover{
-        transform: rotateY(180deg);
-      }
-    
-      #projects ul li .front{
-        border-radius: 5px;
-        backface-visibility: hidden;
-        overflow: hidden;
-        color: #000;
-        width: 320px;
-        float: left;
-        margin-bottom: 5%;
-        position: absolute;
-        text-align: center;
-        height: auto;
-      }
-    
-      #projects ul li .front:hover {
-          visibility: hidden;
-      }
-      
-      /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
-      #projects ul li .back {
-        width: 320px;
-        height: auto;
-        border-radius: 5px;
-        backface-visibility: hidden;
-        overflow: hidden;
-        background: #f5f5f5;
-        color: #333;
-        text-align: center;
-        transform: rotateY(180deg);
-      }
+        #projects ul {
+            position: relative;
+            text-align: center;
+            display: block;
+            max-width: 100%;
+            margin: auto;
+            padding: 0%;
+            }
+        
+            #projects ul li {
+                transform-style: preserve-3d;
+                width: 45%;
+                transition: all 0.8s ease;
+                float: left;
+                margin-bottom: 5%;
+                margin-left: 3%;
+            }
+        
+            #projects ul li:hover{
+                transform: rotateY(180deg);
+              }
+        
+            #projects img {
+                width: 320px;
+                height: auto;
+                border-radius: 5px;
+                animation: drop 1.5s ease;
+                margin: 0 0 0px 0;
+            }
+        
+            #projects img:hover {
+                transform: scale(1.1);
+                -webkit-transform: scale(1.1);
+                -moz-transform: scale(1.1);
+                -o-transform: scale(1.1);
+                box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3)
+            }
+        
+            #projects ul li .front{
+                color: #000;
+                float: left;
+                border-radius: 5px;
+                backface-visibility: hidden;
+                overflow: hidden;
+                position: relative;
+              }
+        
+              #projects ul li .front:hover {
+                visibility: hidden;
+            }
+        
+            /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+           #projects ul li .back {
+               width: 320px;
+               transform: rotateY(180deg);
+               backface-visibility: hidden;
+               border-radius: 5px;
+               backface-visibility: hidden;
+               overflow: hidden;
+               position: absolute;
+               background: #f5f5f5;
+               color: #333;
+               float: left;
+        
+          } 
 
     form input, form textarea {
         width: 60%;
@@ -1187,66 +1216,80 @@ footer p {
     margin-left: 6%;
 }
 
-#projects ul {
-    position: relative;
-    width: 100%;
-    height: auto;
-}
-
-#projects ul li {
-    width: 60%;
-    margin-bottom: 5%;
-    transition: all 0.8s ease;
-    transform-style: preserve-3d;
-    padding-left: 5%;
-    position: absolute;
-}
-
-#projects img {
-    height: auto;
-    border-radius: 5px;
-    animation: drop 1.5s ease;
-}
-
-#projects img:hover {
-    transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3)
+#projects {
+    /*     display: flex; 
+        align-items: center;  
+        justify-content: center; */
+        height: 125vh;
+        width: auto;
+        margin: 0 auto 0 auto;
+    }
     
-}
+    #projects ul {
+        position: relative;
+        text-align: center;
+        display: block;
+        max-width: 100%;
+        margin: auto;
+        padding: 0%;
+        }
+    
+        #projects ul li {
+            transform-style: preserve-3d;
+            width: 100%;
+            transition: all 0.8s ease;
+            float: left;
+            margin-bottom: 5%;
+            position: relative;
+        }
+    
+        #projects ul li:hover{
+            transform: rotateY(180deg);
+          }
+    
+        #projects img {
+            width: 320px;
+            height: auto;
+            border-radius: 5px;
+            animation: drop 1.5s ease;
+            margin: 0 0 0px 0;
+        }
+    
+        #projects img:hover {
+            transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -o-transform: scale(1.1);
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3)
+        }
+    
+        #projects ul li .front{
+            color: #000;
+            float: left;
+            border-radius: 5px;
+            backface-visibility: hidden;
+            overflow: hidden;
+            position: relative;
+          }
+    
+          #projects ul li .front:hover {
+            visibility: hidden;
+        }
+    
+        /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+       #projects ul li .back {
+           width: 320px;
+           transform: rotateY(180deg);
+           backface-visibility: hidden;
 
-  #projects ul li:hover{
-    transform: rotateY(180deg);
-  }
-
-  #projects ul li .front{
-    border-radius: 5px;
-    backface-visibility: hidden;
-    overflow: hidden;
-    color: #000;
-    margin-bottom: 5%;
-    position: absolute;
-    text-align: center;
-    height: auto;
-  }
-
-  #projects ul li .front:hover {
-      visibility: hidden;
-  }
-  
-  /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
-  #projects ul li .back {
-    height: auto;
-    border-radius: 5px;
-    backface-visibility: hidden;
-    overflow: hidden;
-    background: #f5f5f5;
-    color: #333;
-    text-align: center;
-    transform: rotateY(180deg);
-  }
+           backface-visibility: hidden;
+           overflow: hidden;
+           position: absolute;
+           background: #f5f5f5;
+           color: #333;
+           float: left;
+    
+      } 
 
 form input, form textarea {
     width: 70%;
@@ -1365,260 +1408,79 @@ form input, form textarea {
 }
 
 #projects {
-    width: 375;
-    margin: 0 auto 0 auto;
-    transform: translate(-50%, -50%);
-}
-
-#projects ul {
-    position: relative;
-    width: 100%;
-    height: auto;
-}
-
-#projects ul li {
-    width: 60%;
-    margin-bottom: 5%;
-    transition: all 0.8s ease;
-    transform-style: preserve-3d;
-    padding-left: 5%;
-    position: absolute;
-}
-
-#projects img {
-    height: auto;
-    border-radius: 5px;
-    animation: drop 1.5s ease;
-}
-
-#projects img:hover {
-    transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3)
+    /*     display: flex; 
+        align-items: center;  
+        justify-content: center; */
+        height: 125vh;
+        width: auto;
+        margin: 0 auto 0 auto;
+    }
     
-}
-
-  #projects ul li:hover{
-    transform: rotateY(180deg);
-  }
-
-  #projects ul li .front{
-    border-radius: 5px;
-    backface-visibility: hidden;
-    overflow: hidden;
-    color: #000;
-    margin-bottom: 5%;
-    position: absolute;
-    text-align: center;
-    height: auto;
-  }
-
-  #projects ul li .front:hover {
-      visibility: hidden;
-  }
-  
-  /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
-  #projects ul li .back {
-    height: auto;
-    border-radius: 5px;
-    backface-visibility: hidden;
-    overflow: hidden;
-    background: #f5f5f5;
-    color: #333;
-    text-align: center;
-    transform: rotateY(180deg);
-  }
-
-form input, form textarea {
-    width: 70%;
-}
-
-.fa-align-justify {
-    display: inline-block;
-    font-size: 15px;
-    width: 100%;
-    cursor: pointer;
-    text-align: right;
-    margin: 20px 995px 0 0;
-    z-index: -1;
-}
-}
-
-@media only screen 
-  and (max-width: 380px) 
-  and (min-height: 800px) {
-    header nav {
-        margin: 0;
-        float: none;
-    }
-
-    .fa-align-justify:hover {
-        opacity: 0.5;
-    }
-
-    button {
-        font-size: 16px;
-        border: none;
-        display: inline;
-        box-shadow: none;
-        cursor: pointer;
-        margin: 24px 90px 0 0;
-    }    
-
-    header nav ul {
-        height: 0;
-        overflow: hidden;
+    #projects ul {
         position: relative;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        background: none;
-        transform-origin: top;
-        transform: perspective(1000px) rotateX(-90deg);
-        transition: 0.5s;
-    }
-
-    header nav ul.open {
-        transform: perspective(1000px) rotateX(0deg);
-        height: auto;
-    }
-
-    header nav ul li {
-        width: 100%;
-        padding: 5px 0;
-        list-style: none;
-        /*display: block;*/
-        margin: 0;
-        font-size: 11px;
-        border-top: 1px solid #dddddd;
-        background-color: #dddddd
-    }
-
-    header nav ul li:hover {
-        background-color: #eeeeee;
-    }
-
-    header nav ul li a {
-        display: block;
-        padding: 10px;
         text-align: center;
-        text-decoration: none;
-        background: #262626;
-        color: #fff;
-        border-bottom: 1px solid rgba(0,0,0,.2);
-    }
+        display: block;
+        max-width: 100%;
+        margin: auto;
+        padding: 0%;
+        }
     
-    header nav ul li a:hover {
-        background: #0d7ad0;
-    }
-
-#home h1 {
-    font-size: 40px;
-    margin-top: 95%;
-}
-
-#home #videoBG {
-
-    position:absolute;
-    line-height: 0;
-    z-index: -10;
-    width: 100vw;
-    overflow-x: hidden;
-    align-items:center;
-    display: flex;
-    margin:auto;
-}
-
-#about { height: 170vh; }
-
-#about h1 {
-    text-align: center;
-    padding-top: 0;
-}
-
-#about .info img {
-    width: 40%;
-    animation: drop 1.5s ease;
-}
-
-#about figcaption {
-    float: left;
-    margin-top: 30%;
-    text-align: justify;
-    margin-left: 6%;
-}
-
-.info {
-    width: 100%;
-    margin-left: 2%;
-}
-
-#work {
-    z-index: -1;
-}
-
-#projects ul {
-    position: relative;
-    width: 100%;
-    height: auto;
-}
-
-#projects ul li {
-    width: 60%;
-    margin-bottom: 5%;
-    transition: all 0.8s ease;
-    transform-style: preserve-3d;
-    padding-left: 5%;
-    position: absolute;
-}
-
-#projects img {
-    height: auto;
-    border-radius: 5px;
-    animation: drop 1.5s ease;
-}
-
-#projects img:hover {
-    transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3)
+        #projects ul li {
+            transform-style: preserve-3d;
+            width: 100%;
+            transition: all 0.8s ease;
+            float: left;
+            margin-bottom: 5%;
+            position: relative;
+        }
     
-}
+        #projects ul li:hover{
+            transform: rotateY(180deg);
+          }
+    
+        #projects img {
+            width: 320px;
+            height: auto;
+            border-radius: 5px;
+            animation: drop 1.5s ease;
+            margin: 0 0 0px 0;
+        }
+    
+        #projects img:hover {
+            transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -o-transform: scale(1.1);
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3)
+        }
+    
+        #projects ul li .front{
+            color: #000;
+            float: left;
+            border-radius: 5px;
+            backface-visibility: hidden;
+            overflow: hidden;
+            position: relative;
+          }
+    
+          #projects ul li .front:hover {
+            visibility: hidden;
+        }
+    
+        /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+       #projects ul li .back {
+           width: 320px;
+           transform: rotateY(180deg);
+           backface-visibility: hidden;
 
-  #projects ul li:hover{
-    transform: rotateY(180deg);
-  }
-
-  #projects ul li .front{
-    border-radius: 5px;
-    backface-visibility: hidden;
-    overflow: hidden;
-    color: #000;
-    margin-bottom: 5%;
-    position: absolute;
-    text-align: center;
-    height: auto;
-  }
-
-  #projects ul li .front:hover {
-      visibility: hidden;
-  }
-  
-  /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
-  #projects ul li .back {
-    height: auto;
-    border-radius: 5px;
-    backface-visibility: hidden;
-    overflow: hidden;
-    background: #f5f5f5;
-    color: #333;
-    text-align: center;
-    transform: rotateY(180deg);
-  }
+           backface-visibility: hidden;
+           overflow: hidden;
+           position: absolute;
+           background: #f5f5f5;
+           color: #333;
+           float: left;
+    
+      } 
 
 form input, form textarea {
     width: 70%;
@@ -1627,7 +1489,7 @@ form input, form textarea {
 .fa-align-justify {
     display: inline-block;
     font-size: 15px;
-    width: 100%;
+    width: 90%;
     cursor: pointer;
     text-align: right;
     margin: 20px 995px 0 0;
@@ -1747,9 +1609,33 @@ form input, form textarea {
 }
 
 #projects img {
-    width: 60%;
+    width: 70%;
     height: auto;
 }
+
+#projects ul li {
+    transform-style: preserve-3d;
+    width: 100%;
+    transition: all 0.8s ease;
+    float: left;
+    margin-bottom: 5%;
+    position: relative;
+    padding-bottom: 5%;
+}
+
+#projects ul li .back {
+    width: 70%;
+    height: 100%;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    position: absolute;
+    background: #f5f5f5;
+    color: #333;
+    float: left;
+
+} 
 
 form input, form textarea {
     width: 70%;
@@ -1758,7 +1644,7 @@ form input, form textarea {
 .fa-align-justify {
     display: inline-block;
     font-size: 15px;
-    width: 100%;
+    width: 90%;
     cursor: pointer;
     text-align: right;
     margin: 20px 995px 0 0;
